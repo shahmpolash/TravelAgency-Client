@@ -1,0 +1,75 @@
+/*-----------------------------------------------------------------------------------
+
+    Template Name: Qempo - Digital Agency HTML Template
+    Template URI: site.com
+    Description: Fidda - Qempo - Digital Agency HTML Template
+    Author: WebTend 
+    Author URI: https://webtend.net/
+    Version: 1.0
+
+-----------------------------------------------------------------------------------
+
+    CSS INDEX
+    ===================
+
+    01. Theme default css
+	02. Header css
+    03. Hero css
+    04. About css
+    05. Service css
+    06. Features css
+    07. Faq css
+    08. Portfolio css
+    09. Team css
+    10. Testimonial css
+    11. Shop css
+    12. Blog css
+    13. Contact css
+    14. Footer css
+
+-----------------------------------------------------------------------------------*/
+
+@import 'variables';
+@import 'mixin';
+
+//common
+@import 'common';
+
+//Header
+@import 'header';
+
+//Hero
+@import 'hero';
+
+//About
+@import 'about';
+
+//Service
+@import 'service';
+
+//Features
+@import 'features';
+
+//FAQ
+@import 'faq';
+
+//Portfolio
+@import 'portfolio';
+
+//Team
+@import 'team';
+
+//Testimonial
+@import 'testimonial';
+
+//Shop
+@import 'shop';
+
+//Blog
+@import 'blog';
+
+//Contact
+@import 'contact';
+
+//Footer
+@import 'footer';

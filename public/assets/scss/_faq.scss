@@ -1,0 +1,160 @@
+
+/*---=======================
+   07. Start FAQ  css 
+===========================---*/
+.faq-filter{
+    & form{
+        & .form_control{
+            height: 70px;
+            background-color: $white;
+            border: 2px solid $border;
+            border-radius: 35px;
+            padding: 0 40px;
+        }
+        & .nice-select{
+            height: 70px;
+            line-height: 70px;
+            border-radius: 35px;
+            padding: 0 40px;
+            background-color: $white;
+            border: 2px solid $border;
+            &:after{
+                right: 40px;
+            }
+        }
+        & .search-btn{
+            width: 100%;
+            @extend %gradient-bg;
+            height: 70px;
+            border-radius: 35px;
+            color: $white;
+            & i{
+                margin-right: 10px;
+            }
+        }
+    }
+}
+.faq-area-v1{
+    position: relative;
+    z-index: 1;
+    &:after{
+        position: absolute;
+        top: 0;
+        right: 0;
+        content: '';
+        width: 30%;
+        height: 100%;
+        background-color: #e8f6f2;
+        z-index: -1;
+    }
+}
+.faq-img{
+    position: relative;
+    @extend %video-play;
+}
+.faq-wrapper{
+    & .accordion-item{
+        border-radius: 0px;
+        border: none;
+        background-color: transparent;
+        & .accordion-title{
+            display: block;
+            padding: 12px 30px;
+            font-size: 18px;
+            font-weight: 500;
+            color: $heading-color;
+            z-index: 1;
+            @media #{$lg}{
+                padding: 12px 20px;
+            }
+        }
+        & .accordion-title[aria-expanded=true]{
+            box-shadow: none;
+        }
+        & .accordion-title[aria-expanded]:before{
+            font-family: 'Font Awesome 5 Pro';
+            font-weight: 300;
+            content: '\f067';
+            display: inline-block;
+            line-height: 45px;
+            text-align: center;
+            width: 45px;
+            height: 45px;
+            color: $white;
+            @extend %gradient-bg;
+            font-size: 18px;
+            border-radius: 50%;
+            margin-right: 25px;
+            @include transition(.3s);
+            @media #{$lg}{
+                margin-right: 15px;
+            }
+            @media #{$xs}{
+                display: none;
+            }
+        }
+        & .accordion-title[aria-expanded=true]:before{
+            content: '\f068';
+        }
+        & .accordion-body{
+            padding: 30px;
+            padding-top: 0px;
+            padding-bottom: 25px;
+        }
+    }
+    &.faq-wrapper-one{
+        margin-right: 50px;
+        @media #{$lg}{
+            margin-right: 0px;
+        }
+        @media #{$xm}{
+            margin-right: 0px;
+        }
+        & .accordion-item{
+            background-color: $white;
+            box-shadow: 0px 80px 180px 0px rgba(0, 0, 0, 0.06);
+        }
+    }
+    &.faq-wrapper-two{
+        & .accordion-item{
+            border-radius: 35px;
+            background-color: $white;
+            box-shadow: 0px 80px 180px 0px rgba(0, 0, 0, 0.06);
+        }
+    }
+    &.faq-wrapper-three{
+        & .accordion-item{
+            & .accordion-title{
+                padding: 0px;
+            }
+            & .accordion-body{
+                padding: 0px;
+                padding-top: 15px;
+            }
+        }
+    }
+    &.faq-wrapper-four{
+        & .accordion-item{
+            border-radius: 35px;
+            background-color: $white;
+            box-shadow: 0px 80px 180px 0px rgba(0, 0, 0, 0.06);
+        }
+    }
+    &.faq-wrapper-five{
+        & .accordion-item{
+            & .accordion-title{
+                background: $heading-color;
+                color: $white;
+            }
+            & .accordion-title[aria-expanded=true]{
+                @extend %gradient-bg;
+            }
+            & .accordion-body{
+                @extend %gradient-bg;
+                & p{
+                    color: $white;
+                }
+            }
+        }
+    }
+}

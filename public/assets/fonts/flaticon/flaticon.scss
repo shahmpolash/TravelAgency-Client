@@ -1,0 +1,105 @@
+$flaticon-font: "flaticon";
+
+@font-face {
+    font-family: $flaticon-font;
+    src: url("./flaticon.ttf?c7736439ea38eca5ecc4ee67af2b06db") format("truetype"),
+url("./flaticon.woff?c7736439ea38eca5ecc4ee67af2b06db") format("woff"),
+url("./flaticon.woff2?c7736439ea38eca5ecc4ee67af2b06db") format("woff2"),
+url("./flaticon.eot?c7736439ea38eca5ecc4ee67af2b06db#iefix") format("embedded-opentype"),
+url("./flaticon.svg?c7736439ea38eca5ecc4ee67af2b06db#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+$flaticon-map: (
+    "interview": "\f101",
+    "tools": "\f102",
+    "layers": "\f103",
+    "launch": "\f104",
+    "consulting": "\f105",
+    "interior-design": "\f106",
+    "download": "\f107",
+    "communication": "\f108",
+    "customer-service": "\f109",
+    "statistics": "\f10a",
+    "chat": "\f10b",
+    "call": "\f10c",
+    "open": "\f10d",
+    "location-pin": "\f10e",
+    "target": "\f10f",
+    "trolley": "\f110",
+    "aim": "\f111",
+    "conversation": "\f112",
+    "menu": "\f113",
+    "search": "\f114",
+);
+
+.flaticon-interview:before {
+    content: map-get($flaticon-map, "interview");
+}
+.flaticon-tools:before {
+    content: map-get($flaticon-map, "tools");
+}
+.flaticon-layers:before {
+    content: map-get($flaticon-map, "layers");
+}
+.flaticon-launch:before {
+    content: map-get($flaticon-map, "launch");
+}
+.flaticon-consulting:before {
+    content: map-get($flaticon-map, "consulting");
+}
+.flaticon-interior-design:before {
+    content: map-get($flaticon-map, "interior-design");
+}
+.flaticon-download:before {
+    content: map-get($flaticon-map, "download");
+}
+.flaticon-communication:before {
+    content: map-get($flaticon-map, "communication");
+}
+.flaticon-customer-service:before {
+    content: map-get($flaticon-map, "customer-service");
+}
+.flaticon-statistics:before {
+    content: map-get($flaticon-map, "statistics");
+}
+.flaticon-chat:before {
+    content: map-get($flaticon-map, "chat");
+}
+.flaticon-call:before {
+    content: map-get($flaticon-map, "call");
+}
+.flaticon-open:before {
+    content: map-get($flaticon-map, "open");
+}
+.flaticon-location-pin:before {
+    content: map-get($flaticon-map, "location-pin");
+}
+.flaticon-target:before {
+    content: map-get($flaticon-map, "target");
+}
+.flaticon-trolley:before {
+    content: map-get($flaticon-map, "trolley");
+}
+.flaticon-aim:before {
+    content: map-get($flaticon-map, "aim");
+}
+.flaticon-conversation:before {
+    content: map-get($flaticon-map, "conversation");
+}
+.flaticon-menu:before {
+    content: map-get($flaticon-map, "menu");
+}
+.flaticon-search:before {
+    content: map-get($flaticon-map, "search");
+}

@@ -1,0 +1,301 @@
+
+/*---=======================
+   09. Start Team  css 
+===========================---*/
+.team-area-v1{
+    border-top: 1px solid $border;
+    & .team-item{
+        & .team-info{
+            padding-top: 30px;
+            & span.position{
+                color: $theme-color;
+                display: block;
+                font-size: 14px;
+                font-weight: 700;
+            }
+        }
+    }
+    & .team-item{
+        & .team-img{
+            position: relative;
+            overflow: hidden;
+            & img{
+                width: 100%;
+            }
+            & .team-overlay{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: flex-end;
+                padding: 20px;
+                &:hover{
+                    & .team-social{
+                        & .hover-btn{
+                            background-color: $theme-color;
+                            color: $white;
+                            & i{
+                                @include transform(rotate(45deg));
+                            }
+                        }
+                        & .team-social-link{
+                            visibility: visible;
+                            opacity: 1;
+                            @include transform(translateY(60px));
+                        }
+                    }
+                }
+                & .team-social{
+                    & .hover-btn{
+                        position: absolute;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 50px;
+                        height: 50px;
+                        background-color: $white;
+                        color: #000;
+                        cursor: pointer;
+                        border-radius: 50%;
+                        margin-bottom: 10px;
+                        @include transition(.3s);
+                        & i{
+                            @include transition(.3s); 
+                        }
+                    }
+                    & .team-social-link{
+                        visibility: hidden;
+                        opacity: 0;
+                        @include transform(translateY(70px));
+                        @include transition(.3s);
+                        & li{
+                            display: block;
+                            margin-bottom: 10px;
+                            &:last-child{
+                                margin-bottom: 0px;
+                            }
+                            & a{
+                                position: relative;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                width: 50px;
+                                height: 50px;
+                                background-color: $white;
+                                color: #000;
+                                border-radius: 50%;
+                                z-index: 1;
+                                @include transition(.3s);
+                                &:hover{
+                                    background-color: $theme-color;
+                                    color: $white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    & .button{
+        & .main-btn{
+            &:after{
+                display: none;
+            }
+        }
+    }
+}
+
+
+.team-area-v2{
+    & .team-item{
+        @media #{$lg}{
+            &:hover{
+                & .team-img{
+                    & .team-social{
+                        right: 0;
+                        visibility: visible;
+                        opacity: 1;
+                    }  
+                }
+            }
+        }
+        @media #{$xm}{
+            &:hover{
+                & .team-img{
+                    & .team-social{
+                        right: 0;
+                        visibility: visible;
+                        opacity: 1;
+                    }  
+                }
+            }
+        }
+        & .team-img{
+            position: relative;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            overflow: hidden;
+            & img{
+                width: 100%;
+            }
+            & .team-social{
+                background-color: $heading-color;
+                @media #{$lg}{
+                    position: absolute;
+                    bottom: 0;
+                    right: -100%;
+                    visibility: hidden;
+                    opacity: 0;
+                    @include transition(.3s);
+                }
+                @media #{$xm}{
+                    position: absolute;
+                    bottom: 0;
+                    right: -100%;
+                    visibility: hidden;
+                    opacity: 0;
+                    @include transition(.3s);
+                }
+                & ul.social-link{
+                    & li{
+                        display: block;
+                        & a{
+                            border-radius: 0px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 50px;
+                            height: 50px;
+                            background-color: transparent;
+                            color: $white;
+                            &:hover{
+                                background-color: $theme-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        & .team-info{
+            padding: 30px 40px;
+            background-color: $heading-color;
+            margin-left: 86px;
+            @media #{$lp}{
+                margin-left: 55px;
+            }
+            @media #{$lg}{
+                margin-left: 0px;
+            }
+            @media #{$xm}{
+                margin-left: 0px;
+            }
+            & span.position{
+                color: $theme-color;
+                font-size: 14px;
+                font-weight: 700;
+            }
+            & h4{
+                color: $white;
+            }
+        }
+    }
+}
+
+.team-area-v3{
+    & .col-lg-3{
+        @media #{$lg}{
+            width: 33.33%;
+        }
+    }
+    & .team-item{
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        cursor: pointer;
+        &:hover{
+            & .team-img{
+                & img{
+                    @include transform(scale(1.1));
+                }
+                & .team-overlay{
+                    height: 100%;
+                    & .team-overly-content{
+                        visibility: hidden;
+                        opacity: 0;
+                    }
+                    & .team-info{
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+        & .team-img{
+            position: relative;
+            overflow: hidden;
+            & img{
+                width: 100%;
+                @include transform(scale(1));
+                @include transition(.7s);
+            }
+            & .team-overlay{
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 100px;
+                background: -moz-linear-gradient( 0deg, rgb(253,97,81) 0%, rgba(255,119,74,0) 100%);
+                background: -webkit-linear-gradient( 0deg, rgb(253,97,81) 0%, rgba(255,119,74,0) 100%);
+                background: linear-gradient( 0deg, rgb(253,97,81) 0%, rgba(255,119,74,0) 100%);
+                @include transition(.3s);
+                & .team-overly-content{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    padding: 30px 30px 15px;
+                    visibility: visible;
+                    opacity: 1;
+                    @include transition(.3s);
+                }
+                & .team-info{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    padding: 30px;
+                    visibility: hidden;
+                    opacity: 0;
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: flex-end;
+                    flex-direction: column;
+                    @include transition(.3s);
+                    & ul.social-link{
+                        & li{
+                            margin-right: 10px;
+                            & a{
+                                color: $white;
+                            }
+                        }
+                    }
+                }
+                & h4{
+                    color: $white;
+                }
+                & span.position{
+                    display: block;
+                    color: $white;
+                    margin-bottom: 15px;
+                }
+                
+            }
+        }
+    }
+}

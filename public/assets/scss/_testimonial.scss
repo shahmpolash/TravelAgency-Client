@@ -1,0 +1,90 @@
+
+/*---=========================
+   10. Start Testimonial  css 
+===========================---*/
+
+.testimonial-area-v1{
+    & .testimonial-slide-one{
+        z-index: 1;
+        position: relative;
+        &:after{
+            position: absolute;
+            right: 50px;
+            top: 50%;
+            @include transform(translateY(-50%));
+            content: '\f112';
+            font-family: 'flaticon';
+            line-height: 1;
+            font-size: 235px;
+            color: #f0f0f0;
+            z-index: -1;
+        }
+        & .slick-arrow{
+            position: absolute;
+            top: 50%;
+            @include transform(translateY(-50%));
+            cursor: pointer;
+            z-index: 1;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $heading-color;
+            background-color: $light-bg;
+            font-size: 20px;
+            @include transition(.3s);
+            &:hover{
+                background-color: $theme-color;
+                color: $white;
+            }
+            &.prev{
+                left: -110px;
+                @media #{$lp}{
+                    left: -70px;
+                }
+            }
+            &.next{
+                right: -110px;
+                @media #{$lp}{
+                    right: -70px;
+                }
+            }
+        }
+    }
+    & .testimonial-item{
+        & .testimonial-thumb{
+            @media #{$xm}{
+                margin-bottom: 30px;
+            }
+        }
+        & .testimonial-content{
+            padding: 0 20px;
+            & .info{
+                margin-bottom: 32px;
+                & ul.rating{
+                    margin-left: 30px;
+                }
+            }
+            & h3{
+                margin-bottom: 25px;
+                padding-right: 130px;
+                font-size: 40px;
+                line-height: 56px;
+                @media #{$xm}{
+                    font-size: 24px;
+                    line-height: 34px;
+                    padding-right: 0px;
+                }
+            }
+            & .title{
+                & span.position{
+                    display: block;
+                    color: $theme-color;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}

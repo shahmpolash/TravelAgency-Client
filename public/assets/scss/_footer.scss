@@ -1,0 +1,485 @@
+
+/*---=======================
+   14. Start Footer  css 
+===========================---*/
+%socila-icon{
+    & li{
+        margin-right: 5px;
+        & a{
+            position: relative;
+            display: flex;
+            width: 60px;
+            height: 60px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            z-index: 1;
+            @media #{$lp}{
+                width: 40px;
+                height: 40px;
+            }
+            @media #{$lg}{
+                width: 40px;
+                height: 40px;
+            }
+            @media #{$xm}{
+                width: 40px;
+                height: 40px;
+            }
+            &:after{
+                position: absolute;
+                content: '';
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: -moz-linear-gradient( 90deg, rgb(253,97,81) 0%, rgb(255,119,74) 100%);
+                background: -webkit-linear-gradient( 90deg, rgb(253,97,81) 0%, rgb(255,119,74) 100%);
+                background: linear-gradient( 90deg, rgb(253,97,81) 0%, rgb(255,119,74) 100%);
+                visibility: hidden;
+                z-index: -1;
+                border-radius: 50%;
+                opacity: 0;
+                @include transition(.3s);
+            }
+            &:hover{
+                color: $white;
+                &:after{
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+.footer-area{
+    & .col-lg-3{
+        @media #{$lg}{
+            width: 33.33%;
+        }
+    }
+    & .footer-widget{
+        & h4.widget-title{
+            margin-bottom: 42px;
+            font-size: 20px;
+        }
+        & .widget{
+            &.about-widget{
+                & .about-content{
+                    & p{
+                        margin-bottom: 30px;
+                    }
+                }
+            }
+            &.instagram-feed-widget{
+                & .instagram-list{
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin-left: -4px;
+                    margin-right: -4px;
+                    & li{
+                        flex: 0 0 33.33%;
+                        max-width: 33.33%;
+                        padding-left: 4px;
+                        padding-right: 4px;
+                        margin-bottom: 10px;
+                        & a{
+                            display: block;
+                            position: relative;
+                            overflow: hidden;
+                            &:hover{
+                                & .insta-overlay{
+                                    visibility: visible;
+                                    opacity: 1;
+                                    & i{
+                                        @include transform(scale(1)) 
+                                    }
+                                }
+                            }
+                            & img{
+                                width: 100%;
+                            }
+                            & .insta-overlay{
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                background-color: rgba(0,0,0, .5);
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                visibility: hidden;
+                                opacity: 0;
+                                @include transition(.3s);
+                                & i{
+                                    font-size: 18px;
+                                    color: $white;
+                                    @include transform(scale(0));
+                                    @include transition(.4s);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &.recent-post-widget{
+                & .recent-post-list{
+                    & .post-thumbnail-content{
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 15px;
+                        &:last-child{
+                            margin-bottom: 0px;
+                        }
+                        & img{
+                            min-width: 80px;
+                            max-width: 80px;
+                            height: 80px;
+                            object-fit: cover;
+                            margin-right: 20px;
+                        }
+                        & .post-title-date{
+                            & .posted-on{
+                                display: block;
+                                font-size: 12px;
+                                & i{
+                                    margin-right: 10px;
+                                }
+                            }
+                            & h6{
+                                line-height: 24px;
+                                font-size: 16px;
+                                font-weight: 600;
+                                @media #{$lp}{
+                                    font-size: 12px;
+                                }
+                                @media #{$lg}{
+                                    font-size: 15px;
+                                }
+                                &:hover{
+                                    color: $theme-color;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &.newsletter-widget{
+                & .newsletter-form{
+                    & form{
+                        margin: 21px 0 10px;
+                        & .form_group{
+                            & .form_control{
+                                height: 60px;
+                                box-shadow: 0px 16px 32px 0px rgba(0, 0, 0, 0.1);
+                                padding: 0 25px;
+                                border: none;
+                                background-color: $white;
+                                @media #{$lg}{
+                                    padding: 0 5px;
+                                }
+                            }
+                            & .newsletter-btn{
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                width: 60px;
+                                height: 60px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                color: $white;
+                                background: -moz-linear-gradient( 90deg, rgb(253,97,81) 0%, rgb(255,119,74) 100%);
+                                background: -webkit-linear-gradient( 90deg, rgb(253,97,81) 0%, rgb(255,119,74) 100%);
+                                background: linear-gradient( 90deg, rgb(253,97,81) 0%, rgb(255,119,74) 100%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    & .social-link{
+        @extend %socila-icon;
+    }
+    & .copyright-area{
+        padding: 40px 0 45px;
+        background: -moz-linear-gradient( 90deg, rgb(253,97,81) 0%, rgb(255,119,74) 100%);
+        background: -webkit-linear-gradient( 90deg, rgb(253,97,81) 0%, rgb(255,119,74) 100%);
+        background: linear-gradient( 90deg, rgb(253,97,81) 0%, rgb(255,119,74) 100%);
+        & .copyright-text{
+            @media #{$xm}{
+                text-align: center;
+            }
+            & p{
+                color: $white;
+            }
+        }
+        & .footer-logo{
+            @media #{$xm}{
+                margin: 20px 0;
+            }
+        }
+        & .copyright-nav{
+            float: right;
+            @media #{$xm}{
+                float: none;
+                text-align: center;
+            }
+            & ul{
+                & li{
+                    display: inline-block;
+                    margin-left: 50px;
+                    @media #{$lg}{
+                        margin-left: 15px;
+                    }
+                    @media #{$xm}{
+                        margin-left: 10px;
+                        margin-right: 10px;
+                    }
+                    & a{
+                        color: $white;
+                        font-size: 16px;
+                        font-weight: 700;
+                        &:hover{
+                            color: $heading-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.footer-area-v1{
+        & .footer-widget{
+            & .widget{
+                & h4.widget-title{
+                    color: $white;
+                }
+                & p{
+                    color: rgba(255, 255, 255, 0.6);
+                }
+                &.about-widget{
+                    & .about-content{
+                        & .social-link{
+                            & li{
+                                & a{
+                                    background: #020027;
+                                    color: $white;
+                                }
+                            }
+                        }
+                    }
+                }
+                &.recent-post-widget{
+                    & .recent-post-list{
+                        & .post-thumbnail-content{
+                            & .post-title-date{
+                                & h6{
+                                    color: $white;
+                                    &:hover{
+                                        @extend %link-hover;
+                                    }
+                                }
+                                & span.posted-on{
+                                    color: #918eca;
+                                }
+                            }
+                        }
+                    }
+                }
+                &.newsletter-widget{
+                    & .newsletter-form{
+                        & .form_group{
+                            & .form_control{
+                                background-color: #0c0751;
+                                &::placeholder{
+                                    color: #aaaaaa;
+                                }
+                            }
+                        }
+                    }
+                }
+            } 
+        }
+    }
+    &.footer-area-v2{
+        & .footer-widget{
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            &:after{
+                position: absolute;
+                top: -200px;
+                left: 50%;
+                @include transform(translateX(-50%));
+                content: '';
+                background: url(../images/footer/qempo.png) no-repeat;
+                background-position: center;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+                @media#{$xm}{
+                    display: none;
+                }
+            }
+            & .widget{
+                &.about-widget{
+                    & .about-content{
+                        & .social-link{
+                            & li{
+                                & a{
+                                    background: $white;
+                                    color: $heading-color;
+                                    &:hover{
+                                        color: $white;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.footer-area-v3{
+        & .footer-widget{
+            & h4.widget-title{
+                color: $white;
+            }
+            & .footer-logo{
+                @media #{$xm}{
+                    text-align: center;
+                    margin-bottom: 20px;
+                }
+            }
+            & .footer-top{
+                border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+                & .footer-nav{
+                    float: right;
+                    @media #{$xm}{
+                        float: none;
+                        text-align: center;
+                    }
+                    & ul{
+                        & li{
+                            display: inline-block;
+                            margin-left: 65px;
+                            @media #{$xm}{
+                                margin-left: 10px;
+                                margin-right: 10px;
+                            }
+                            & a{
+                                font-weight: 700;
+                                &:hover{
+                                    @extend %link-hover;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            & .widget{
+                & p{
+                    color: #cacaca;
+                }
+                &.about-widget{
+                    & .about-content{
+                        & .social-link{
+                            & li{
+                                & a{
+                                    background: rgba(255, 255, 255, 0.1);
+                                    color: $white;
+                                    &:hover{
+                                        color: $white;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &.recent-post-widget{
+                    & .recent-post-list{
+                        & .post-thumbnail-content{
+                            & .post-title-date{
+                                & h6{
+                                    color: $white;
+                                    &:hover{
+                                        @extend %link-hover;
+                                    }
+                                }
+                                & span.posted-on{
+                                    color: #cacaca;
+                                }
+                            }
+                        }
+                    }
+                }
+                &.newsletter-widget{
+                    & .newsletter-form{
+                        & .form_group{
+                            & .form_control{
+                                background-color: transparent;
+                                border-radius: 30px;
+                                border: 2px solid #3a3a3a;
+                            }
+                            & .newsletter-btn{
+                                border-radius: 50%;
+                            }
+                        }
+                    }
+                }
+                &.contact-widget{
+                    & .contact-info-item{
+                        display: flex;
+                        align-items: center;
+                        padding-bottom: 25px;
+                        border-bottom: 1px solid #393939;
+                        margin-bottom: 25px;
+                        &:last-child{
+                            margin-bottom: 0px;
+                            padding-bottom: 0px;
+                            border-bottom: 0px;
+                        }
+                        & .icon{
+                            margin-right: 20px;
+                            min-width: 40px;
+                            max-width: 40px;
+                            height: 40px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            border-radius: 50%;
+                            @extend %gradient-bg;
+                            & i{
+                                font-size: 14px;
+                                color: $white;
+                            }
+                        }
+                        & .info{
+                            margin-top: -15px;
+                            & span{
+                                font-size: 14px;
+                                color: #cacaca;
+                                margin-bottom: 5px;
+                                display: block;
+                            }
+                            & h5{
+                                line-height: 9px;
+                                color: $white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        & .copyright-area{
+            background: #181818;
+            & .copyright-text{
+                & span{
+                    color: $theme-color;
+                }
+            }
+        }
+    }
+}

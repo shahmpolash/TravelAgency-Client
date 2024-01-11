@@ -1,0 +1,483 @@
+
+
+/*=========================
+    1. Start COMMON css 
+==========================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap');
+
+html{
+    font-size: 100%;
+}
+*{
+    margin: 0;
+    padding: 0;
+    @include box-sizing (border-box);
+}
+a{
+    color: inherit;
+    text-decoration: none;
+    @include transition(.3s);
+    &:hover,&:focus{
+        color: inherit;
+        text-decoration: none;
+    }
+}
+a:focus,
+input:focus,
+textarea:focus,
+button:focus {
+    text-decoration: none;
+    outline: none;
+}
+
+i,
+span,
+a{
+    display: inline-block;
+}
+h1,
+h2,
+h3,
+h4,
+h5{
+    font-weight: 700;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-family: $poppins;
+    color: $heading-color;
+    margin: 0px;
+    font-weight: 600;
+}
+h1 {
+    font-size: 80px;
+    line-height: 90px;
+}
+h2 {
+    font-size: 60px;
+    line-height: 70px;
+}
+h3 {
+    font-size: 30px;
+    line-height: 40px;
+}
+h4 {
+    font-size: 24px;
+    line-height: 35px;
+}
+h5 {
+    font-size: 18px;
+    line-height: 28px;
+}
+h6 {
+    font-size: 16px;
+}
+ul,ol {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+}
+p{
+    color: $text-color;
+    margin: 0px;
+}
+input,textarea{
+    display: inherit;
+}
+img{
+    max-width: 100%;
+}
+body {
+    font-family: $roboto;
+    font-weight: normal;
+    font-style: normal;
+    color: $text-color;
+    font-size: 16px;
+    line-height: 30px;
+    overflow-x: hidden;
+}
+
+// others common css here
+.section-title{
+    & span.span{
+        color: $theme-color;
+        font-weight: 700;
+        font-size: 16px;
+        margin-bottom: 5px;
+        display: block;
+    }
+    & h2{
+        & span.qempo{
+            color: $theme-color;
+        }
+        @media #{$lg}{
+            font-size: 42px;
+            line-height: 52px;
+        }
+        @media #{$xs}{
+            font-size: 28px;
+            line-height: 38px;
+        }
+    }
+}
+.section-title-white{
+    & span.span, & h2{
+        color: $white;
+    }
+}
+.bg_cover{
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.parallax-bg {
+    background-attachment: fixed;
+}
+.slick-slide {
+    outline: 0;
+}
+ul.social-link{
+    & li{
+        display: inline-block;
+    }
+}
+.form_group{
+    position: relative;
+}
+.form_control{
+    width: 100%;
+    padding: 0 30px;
+    height: 60px;
+    border: none;
+}
+textarea.form_control{
+    padding-top: 15px;
+    display: inherit;
+}
+/*===== All bg =====*/
+.main-bg{
+    background-color: $theme-color;
+}
+.blue-bg{
+    background-color: $heading-color;
+}
+.light-bg{
+    background-color: $light-bg;
+}
+.aquamarine-light{
+    background-color: #e8f6f2;
+}
+
+/*===== Extend Css =====*/
+%gradient-bg{
+    background: -moz-linear-gradient( 90deg, rgb(253,97,81) 0%, rgb(255,119,74) 100%);
+    background: -webkit-linear-gradient( 90deg, rgb(253,97,81) 0%, rgb(255,119,74) 100%);
+    background: -ms-linear-gradient( 90deg, rgb(253,97,81) 0%, rgb(255,119,74) 100%);
+    background: linear-gradient( 90deg, rgb(253,97,81) 0%, rgb(255,119,74) 100%);
+}
+%link-hover{
+    color: $theme-color;
+}
+%video-play{
+    & .play-content{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        @include transform(translate(-50%,-50%));
+        & .video-popup{
+            width: 120px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: $white;
+            font-size: 16px;
+            color: $heading-color;
+        }
+    }
+}
+%check_list{
+    & ul.list{
+        & li{
+            position: relative;
+            padding-left: 30px;
+            &.check{
+                &:before{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    content: '\f00c';
+                    font-family: 'Font Awesome 5 Pro';
+                    color: $theme-color;
+                    margin-right: 15px;
+                }
+            }
+        }
+    }
+}
+%btn_link{
+    & .btn-link{
+        text-decoration: none;
+        color: $heading-color;
+        font-weight: 700;
+        &:after{
+            display: inline-block;
+            content: '\f178';
+            font-weight: 300;
+            font-family: 'Font Awesome 5 Pro';
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+    }
+}
+/*===== All Button Style =====*/
+button{
+    border: none;
+}
+.main-btn {
+    @extend %gradient-bg;
+    color: $white;
+    font-size: 16px;
+    overflow: hidden;
+    padding: 15px 45px;
+    position: relative;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 16px;
+    transition: 0.2s transform ease-in-out;
+    z-index: 0;
+    &:before{
+        background-color: $theme-color-two;
+        border-radius: 30px;
+        content: '';
+        display: block;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform: translate(-100%, 0) rotate(10deg);
+        transform-origin: top left;
+        transition: 0.2s transform ease-out;
+        z-index: -1;
+    }
+    &:after{
+        display: inline-block;
+        content: '\f178';
+        font-weight: 400;
+        font-family: 'Font Awesome 5 Pro';
+        margin-left: 10px;
+        vertical-align: middle;
+    }
+    &:hover,&:focus{
+        color: $white;
+        &:before{
+            transform: translate(0, 0);
+        }
+    }
+}
+/*
+    nice select css
+*/
+.nice-select{
+    width: 100%;
+    outline: none;
+    &.open{
+        &:after{
+            transform: none;
+        }
+    }
+    &:after{
+        content: "\f107";
+        font-family: 'Font Awesome 5 Pro';
+        right: 20px;
+        font-size: 12px;
+        font-weight: 400;
+        transform: none;
+        border: none;
+        top: 0;
+        margin-top: 0;
+        color: #2E2E2E;
+    }
+    & .list{
+        width: 100%;
+    }
+}
+
+/*
+    Nice number css
+*/
+.nice-number {
+    display: inline-flex;
+    justify-content: stretch;
+}
+  
+.nice-number input {
+    vertical-align: middle;
+    -moz-appearance: textfield;
+    box-sizing: content-box;
+    margin: 0;
+    text-align: center;
+}
+  
+.nice-number input::-webkit-inner-spin-button,
+.nice-number input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/*
+    search 
+*/
+#search-modal {
+    background: rgba(23, 26, 33, 0.85);
+    & .modal-content{
+        background: 0 0;
+        box-shadow: none;
+        border: none; 
+        &:focus{
+            box-shadow: none; 
+        }
+    }
+    & .form_control{
+        padding-left: 0;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid #e5e5e5;
+        color: #fff;
+        margin-bottom: 0; 
+        height: 50px;
+        &:focus{
+            border-color: $theme-color;
+        }
+        &::placeholder{
+            color: #fff; 
+        }
+    }
+    & .search_btn{
+        position: absolute;
+        background: transparent;
+        top: 10px;
+        right: 10px;
+        color: #fff; 
+    }
+}
+/*
+    Start Preloader css
+*/
+.preloader {
+    background-color: $white;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 99999; 
+}
+.lds-ellipsis {
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 64px;
+    text-align: center;
+    z-index: 9999; 
+}
+.lds-ellipsis span {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: $theme-color;
+    -webkit-animation: ball-pulse-sync .6s 0s infinite ease-in-out;
+    animation: ball-pulse-sync .6s 0s infinite ease-in-out; 
+}
+.lds-ellipsis span:nth-child(1) {
+    -webkit-animation: ball-pulse-sync .6s -.14s infinite ease-in-out;
+    animation: ball-pulse-sync 0.6s -0.14s infinite ease-in-out; }
+
+.lds-ellipsis span:nth-child(2) {
+    -webkit-animation: ball-pulse-sync .6s -70ms infinite ease-in-out;
+    animation: ball-pulse-sync 0.6s -70ms infinite ease-in-out; }
+
+@-webkit-keyframes ball-pulse-sync {
+  33% {
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px); }
+  66% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px); }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0); } }
+@keyframes ball-pulse-sync {
+  33% {
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px); }
+  66% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px); }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0); } }
+/*
+    End Preloader css
+*/
+
+/*
+    Start scroll_up css
+*/
+.back-to-top {
+    background: $theme-color;
+    border-radius: 50%;
+    bottom: 30px;
+    color: $white;
+    cursor: pointer;
+    display: none;
+    font-size: 20px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    position: fixed;
+    right: 30px;
+    text-align: center;
+    text-decoration: none;
+    transition: .3s;
+    z-index: 337;
+    &:hover,&:focus{
+        background: $heading-color;
+        color: $white;
+    }
+}
+/*
+    End scroll_up css
+*/
+@keyframes play {
+	0% {
+	  -webkit-transform: translateX(-50%) translateY(-50%) translateZ(0) scale(.5);
+	  transform: translateX(-50%) translateY(-50%) translateZ(0) scale(.5);
+	  opacity: 0;
+	}
+	0% {
+	  -webkit-transform: translateX(-50%) translateY(-50%) translateZ(0) scale(.5);
+	  transform: translateX(-50%) translateY(-50%) translateZ(0) scale(.5);
+	  opacity: 1;
+	}
+	100% {
+	  -webkit-transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.3);
+	  transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.3);
+	  opacity: 0;
+	}
+  }
+/*====================
+    End COMMON css 
+======================*/
